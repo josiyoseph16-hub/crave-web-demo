@@ -1,0 +1,427 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111;
+    color: white;
+    line-height: 1.6;
+}
+
+.demo-banner {
+    background: #f5a623;
+    color: #111;
+    text-align: center;
+    padding: 9px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 7%;
+    background: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: #f5a623;
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 700px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 80px 7%;
+}
+
+.small-title {
+    color: #f5a623;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 8vw, 90px);
+    line-height: 0.95;
+    margin-bottom: 30px;
+}
+
+.hero-content > p:not(.small-title) {
+    color: #ddd;
+    max-width: 520px;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.primary {
+    background: #f5a623;
+    color: #111;
+}
+
+.primary:hover {
+    background: #ffc15a;
+    transform: translateY(-2px);
+}
+
+.secondary {
+    border: 1px solid white;
+    color: white;
+}
+
+.secondary:hover {
+    background: white;
+    color: #111;
+}
+
+.section {
+    padding: 100px 7%;
+}
+
+.section-title {
+    max-width: 700px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-title h2 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.section-title > p:not(.small-title) {
+    color: #aaa;
+}
+
+.menu-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.food-card {
+    background: #1b1b1b;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.food-card:hover {
+    transform: translateY(-7px);
+}
+
+.food-image {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #222;
+}
+
+.food-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.food-card:hover .food-image img {
+    transform: scale(1.08);
+}
+
+.food-info {
+    padding: 25px;
+}
+
+.food-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.food-info p {
+    color: #aaa;
+}
+
+.about {
+    background: #181818;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-image {
+    height: 500px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #222;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-content h2 {
+    font-size: 50px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.about-content p:not(.small-title) {
+    color: #aaa;
+    margin-bottom: 18px;
+    max-width: 600px;
+}
+
+.gallery {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.gallery-tile {
+    height: 320px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #222;
+}
+
+.gallery-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.gallery-tile:hover img {
+    transform: scale(1.08);
+}
+
+.rating-section {
+    text-align: center;
+    padding: 90px 20px;
+    background: #1a1a1a;
+}
+
+.rating-section h2 {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.rating-section p:last-child {
+    color: #aaa;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.contact-card {
+    background: #1b1b1b;
+    padding: 35px 20px;
+    border-radius: 10px;
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.contact-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: #aaa;
+}
+
+.contact-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #f5a623;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.map-button {
+    margin-top: 40px;
+}
+
+.footer {
+    text-align: center;
+    padding: 50px 20px;
+    background: #080808;
+    border-top: 1px solid #333;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    color: #777;
+    margin: 5px;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #111;
+        flex-direction: column;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .section {
+        padding: 70px 6%;
+    }
+
+    .section-title h2 {
+        font-size: 35px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-image {
+        height: 350px;
+    }
+
+    .about-content h2 {
+        font-size: 40px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
